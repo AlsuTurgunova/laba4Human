@@ -10,11 +10,17 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.*;
 import java.util.List;
+import java.util.Scanner;
 
+//"C:\\Users\\alsut\\IdeaProjects\\Laba4\\src\\Work\\foreign_names.csv"
 public class Main {
     public static  void main(String[] args) throws IOException {
 
-        FileReader file = new FileReader("C:\\Users\\alsut\\IdeaProjects\\Laba4\\src\\Work\\foreign_names.csv");
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter the directory to the desired file, including the csv file itself -> ");
+        String directory = scanner.next();
+        try {
+        FileReader file = new FileReader(directory);
         CSVReader reader = new CSVReader(file, ';');
         String[] column;
         List<Human> person = new ArrayList<>();
@@ -27,6 +33,9 @@ public class Main {
         }
 
         System.out.println(person.toString());
-
+    }
+        catch (Exception ex) {
+            System.out.println(ex.getMessage());
+        }
     }
 }

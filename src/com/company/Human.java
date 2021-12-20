@@ -127,9 +127,6 @@ public class Human {
             return false;
         }
     }
-
-
-
     /**
      * ListTest the hash code of this object.
      *
